@@ -1,0 +1,40 @@
+.add-product {
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 60px;
+  color: #1d83ab;
+}
+
+  .add-product h1 {
+    margin-top: 50px;
+    margin-bottom: 10px;
+  }
+  .headadd{
+    color: #1d83ab;
+  }
+  button{
+    width: 100%;
+  
+    margin-top: 10px;
+  
+    /* padding: 10px 10px; */
+    padding-bottom: 7px;
+  
+    background-color: #1d83ab;
+  
+    color: #fff;
+  
+    border: 2px;
+    border-color: black;
+  
+    border-radius: 4px;
+  
+    cursor: pointer;
+  
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+  
+    background-color: rgba(0, 123, 255, 0.6);
+  
+  }

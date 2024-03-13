@@ -1,0 +1,49 @@
+# Book_Management_System Project
+
+This project is a web application designed to manage book borrowing and lending. It utilizes ASP.NET Core 7 for the backend server and Angular 17 for the frontend client.
+
+
+## Prerequisites
+
+To run this project, you will need the following:
+
+- Visual Studio Code or your preferred IDE
+- .NET Core 7 SDK
+- Node.js 16 or later
+- Angular CLI
+
+## Assumptions
+
+-
+
+## Setting Up the Project
+
+- Unzip the Project
+
+### BackEnd Setup
+
+- Open the BookManagementSystem.API.sln in BookBorrowing Folder in Visual Studio 
+- Provide connection string for your database in appsettings.json
+- Add migrations using add-migration and seed the Database using update-database Commands
+- Run the Appliction as localhost
+
+### Frontend Setup
+
+- open the FrontEnd folder in visual studio code 
+- install the packages using 
+bash
+    npm install 
+
+- Change the environment setting like you base api url in the environment folder
+
+- serve the front on localhost using 
+bash
+    ng serve
+
+Once the backend and frontend projects are running, you can access the application at http://localhost:4200.
+
+## User Credentials
+
+- 4 users are Seeded with Following Credentials
+- emails are amisha@test.com, user3@test.com, user1@test.com, admin@123.com for user1, user2 , user3 and Admin(to edit genre) respectively
+- password is amisha@123, user3@123, user1@123, Admin@123 respectively for the above users

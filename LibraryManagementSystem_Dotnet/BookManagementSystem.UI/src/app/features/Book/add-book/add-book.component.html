@@ -1,0 +1,140 @@
+<div class="container">
+  <h1 class="mt-3">Add Book</h1>
+
+  <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+    <div class="mt-2 mb-5">
+      <div class="mt-3">
+        <label for="name" class="form-label">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          class="form-control" required
+          [(ngModel)]="model.name"
+        />
+        <div *ngIf="!model.name" class="text-danger">Name is required</div>
+      </div>
+
+       <div class="mt-3">
+        <label for="urlHandle" class="form-label">Unique Name</label>
+        <input
+          type="text"
+          id="urlHandle"
+          name="urlHandle"
+          class="form-control" required
+          [(ngModel)]="model.urlHandle"
+        />
+        <div *ngIf="!model.urlHandle" class="text-danger">This field is required</div>
+      </div> 
+
+      <div class="mt-3">
+        <label for="description" class="form-label">Description</label>
+        <input
+          type="text"
+          id="description"
+          name="description"
+          class="form-control" required
+          [(ngModel)]="model.description"
+        />
+        <div *ngIf="!model.description" class="text-danger">Description is required</div>
+      </div>
+
+      <!-- <div class="mt-3">
+        <label for="featuredImageUrl" class="form-label"
+          >Featured Image Url
+          <button
+            type="button"
+            class="btn btn-light"
+            (click)="openImageSelector()"
+          >
+            Select Image
+          </button>
+        </label>
+
+        <ng-container *ngIf="model.featuredImageUrl !== ''">
+          <div>
+            <img [src]="model.featuredImageUrl" height="100" class="my-2" />
+          </div>
+        </ng-container>
+
+        <input
+          type="text"
+          id="featuredImageUrl"
+          name="featuredImageUrl"
+          class="form-control"
+          [(ngModel)]="model.featuredImageUrl"
+        />
+      </div> -->
+
+      <div class="mt-3">
+        <label for="author" class="form-label">Author</label>
+        <input
+          type="text"
+          id="author"
+          name="author"
+          class="form-control" required
+          [(ngModel)]="model.author"
+        />
+        <div *ngIf="!model.author" class="text-danger">Author Name is required</div>
+      </div>
+
+      <div class="form-check mt-3">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="isAvailable"
+          name="isAvailable" required
+          [(ngModel)]="model.isAvailable"
+        />
+        <label class="form-check-label" for="isAvailable">
+          Is Available?
+        </label>
+        <div *ngIf="!model.isAvailable" class="text-danger">This field is required</div>
+      </div>
+
+      <div class="mt-3">
+        <label for="genres" class="form-label">Genres</label>
+        <ng-container *ngIf="genres$ | async as genres">
+          <select
+            class="form-control"
+            [(ngModel)]="model.genres"
+            name="genres"
+            id="genres" required=""
+            multiple
+          >
+            <option *ngFor="let genre of genres" [value]="genre.id">
+              {{ genre.name }}
+            </option>
+          </select>
+        </ng-container>
+        <div *ngIf="!model.genres" class="text-danger">This field is required</div>
+      </div>
+
+      <!-- <star-rating [(ngModel)]="model.rating"></star-rating> -->
+
+      <div class="d-flex mt-3">
+        <button type="submit" class="btn btn-primary">Save</button>
+        <div style="margin-right: 5px;"></div> 
+          <a [routerLink]="['/admin/books']" class="btn btn-danger">Back</a>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div
+  class="images-container-modal"
+  [ngClass]="{
+    'd-block': isImageSelectorVisible,
+    'd-none': !isImageSelectorVisible
+  }"
+>
+  <button
+    type="button"
+    class="btn btn-light"
+    style="position: fixed; top: 10px; right: 10px"
+    (click)="closeImageSelector()"
+  >
+    X
+  </button>
+  <app-image-selector></app-image-selector>
+</div>

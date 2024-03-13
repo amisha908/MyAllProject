@@ -1,0 +1,154 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+  .nav h1 a{
+    /* color: maroon; */
+    color: #1d83ab;
+    margin: 0;
+    font-size: 40px;
+  }
+
+  .nav ul {
+    display: inline-flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav li {
+    padding-left: 15px;
+    padding-top: 15px;
+  }
+
+    .nav li a {
+      text-decoration: none;
+      color: #1d83ab;
+      cursor: pointer;
+    }
+
+  .nav .nav-search {
+    margin-top: 5px;
+    flex: 1;
+    display: flex;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+    .nav .nav-search input {
+      flex: 1;
+      color: blueviolet;
+      color: #1d83ab;
+      height: 39px;
+      border-right: 0px;
+    }
+
+    .nav .nav-search button {
+      color: blueviolet;
+      border: 1px solid maroon;
+      height: 39px;
+      border-left: 0px;
+    }
+
+h1 a {
+  color: white;
+  text-decoration: none;
+}
+
+.suggested-result {
+  position: absolute;
+  display: list-item !important;
+  z-index: 10;
+  background-color: #fff;
+  width: 300px;
+  top: 40px;
+  border: 1px solid #ddd;
+}
+
+  .suggested-result li {
+    border: 1px solid #ddd;
+    padding: 5px;
+  }
+
+    .suggested-result li a {
+      cursor: pointer;
+      color: #1d83ab;
+    }
+
+.login-container {
+
+  width: 300px;
+
+  margin: 0 auto;
+
+  padding: 10px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 5px;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  color: white;
+
+  background-color: rgb(206, 228, 141);
+
+  justify-content: center; /* Horizontally center the button */
+
+  align-items: center; /* Vertically center the button */
+
+}
+button {
+
+  width: 100%;
+
+  margin-top: 10px;
+
+  padding: 10px;
+  /* padding-top: 20px; */
+  margin-bottom: 20px;
+
+
+  background-color: #1d83ab;
+
+  color: #fff;
+
+  border: none;
+
+  border-radius: 4px;
+
+  cursor: pointer;
+
+  transition: background-color 0.3s ease;
+
+}
+
+
+
+/* Hover effect */
+
+button:hover {
+
+  background-color: rgba(0, 123, 255, 0.6);
+
+}
+
+
+
+/* Focus effect */
+
+button:focus {
+
+  outline: none;
+
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3);
+
+}
+.head{
+  margin-top: 10px;
+  padding-top: 10px;
+  color: rgba(0, 123, 255, 0.6);
+}
+
+

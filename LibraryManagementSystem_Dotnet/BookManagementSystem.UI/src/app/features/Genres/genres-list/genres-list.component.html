@@ -1,0 +1,33 @@
+<div class="container">
+
+    <h1 class="mt-3">
+        Genres List
+    </h1>
+
+    <div class="d-flex justify-content-end mt-3 ">
+        <a  [routerLink]="['/admin/genres/add']" class="btn btn-primary">Add Genres</a>
+    </div>
+
+    <ng-container *ngIf="genres" >
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Unique Identification</th>
+                    <th> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let genre of genres">
+                <td>{{genre.id}}</td>
+                <td>{{genre.name}}</td>
+                <td>{{genre.urlHandle}}</td>
+                <td>
+                    <a class="btn btn-light" [routerLink]="['/admin/genres', genre.id]">Edit</a>
+                </td>
+                </tr>
+            </tbody>
+        </table>
+    </ng-container>
+</div>

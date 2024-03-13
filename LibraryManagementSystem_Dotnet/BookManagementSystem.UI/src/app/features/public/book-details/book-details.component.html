@@ -1,0 +1,47 @@
+<ng-container *ngIf="book$ | async as book; else loader">
+  <div class="container">
+    <div class="py-5 my-5"  style="background-color: rgb(243, 203, 236);">
+      <div class="col-12 col-md-8 col-lg-6 mx-auto">
+        <!-- <img
+          [src]="book.featuredImageUrl"
+          [title]="book.name"
+          class="img-fluid"
+        /> -->
+
+        <h1 class="mt-4">{{ book.name }}</h1>
+
+        <div class="d-flex justify-content-between mt-4">
+          <span>{{ book.author }}</span>
+        </div>
+
+        <div *ngIf="book.genres" class="mt-4">
+          <span
+            class="badge bg-secondary me-2"
+            *ngFor="let genre of book.genres"
+          >
+            {{ genre.name }}
+          </span>
+        </div>
+        <div>
+            <p class="card-text">
+                {{ book.description }}
+              </p>
+        </div>
+        <ng-container *ngIf=!isEmptyLocalStorage>
+          <div class="d-flex mt-3">
+            <button [disabled]="!book.isAvailable" class="btn btn-primary" (click)="onClick(book.id)">Borrow This Book</button>
+            <div style="margin-right: 10px;"></div> 
+          <a [routerLink]="['']" class="btn btn-danger">Back</a>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<ng-template #loader>
+  <div class="text-center mt-5">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+</ng-template>
