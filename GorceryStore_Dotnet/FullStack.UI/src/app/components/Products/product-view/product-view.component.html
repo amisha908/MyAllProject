@@ -1,0 +1,13 @@
+<!-- product-view.component.html -->
+<app-home-navbar></app-home-navbar>
+<div class="product-details" *ngIf="product">
+    <h2>{{ product.productName }}</h2>
+    <img [src]="product.image" alt="Product Image">
+    <p class="description">Description: {{ product.description }}</p>
+    <p>Category: {{ product.category }}</p>
+    <p>Available Quantity: {{ product.availableQuantity }}</p>
+    <p>Price: {{ product.price }}</p>
+    <p>Discount: {{ product.discount }}</p>
+    <p>Specification: {{ product.specification }}</p>
+  </div>
+  

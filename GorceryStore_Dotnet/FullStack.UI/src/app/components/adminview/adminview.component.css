@@ -1,0 +1,71 @@
+/* Product Table Styling */
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.product-table th,
+.product-table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.product-table th {
+  background-color: #f2f2f2;
+}
+
+/* Action Button Styling */
+.edit-button {
+  background-color: #4caf50; /* Green color */
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.edit-button:hover {
+  background-color: #45a049; /* Darker green color on hover */
+}
+
+.delete-button {
+  background-color: #f44336; /* Red color */
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.delete-button:hover {
+  background-color: #d32f2f; /* Darker red color on hover */
+}
+
+
+/* Animated Alert Styling */
+.alert-container {
+  position: relative;
+  margin-top: 20px;
+}
+
+.app-animated-alert {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

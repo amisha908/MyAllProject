@@ -1,0 +1,46 @@
+/* component.css */
+:host {
+    display: block;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Add this line to enforce fixed table layout */
+
+  
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #000000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  tr:hover {
+    background-color: #e9e9e9;
+  }
+  .image-cell {
+    width: 100px;
+    height: 110px;
+    padding: 0;
+  }
+  
+  .small-image {
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+  }
+  

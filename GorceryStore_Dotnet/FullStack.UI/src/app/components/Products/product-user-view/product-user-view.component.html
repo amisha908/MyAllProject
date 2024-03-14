@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<div class="container">
+  <app-usernavbar></app-usernavbar>
+
+  <div class="product-details" *ngIf="product">
+    <div class="left-section">
+      <img [src]="product.image" alt="Product Image">
+    </div>
+  
+    <div class="right-section">
+      <h2>{{ product.productName }}</h2>
+      <p class="description">Description: {{ product.description }}</p>
+      <p>Category: {{ product.category }}</p>
+      <p>Available Quantity: {{ product.availableQuantity }}</p>
+      <p>Price: {{ product.price }}</p>
+      <p>Discount: {{ product.discount }}</p>
+      <p>Specification: {{ product.specification }}</p>
+
+      <div class="quantity-container">
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" min="1" max="{{ product.availableQuantity }}" [(ngModel)]="productQuantity">
+      </div>
+    
+      <button (click)="addToCart()" class="btn btn-primary">Add to Cart</button>
+      <div class="rating">
+        <label for="rating">Rate the product:</label>
+        <span (click)="selectRating(1)" [ngClass]="{ 'filled': selectedRating >= 1 }"><i class="fas fa-star"></i></span>
+        <span (click)="selectRating(2)" [ngClass]="{ 'filled': selectedRating >= 2 }"><i class="fas fa-star"></i></span>
+        <span (click)="selectRating(3)" [ngClass]="{ 'filled': selectedRating >= 3 }"><i class="fas fa-star"></i></span>
+        <span (click)="selectRating(4)" [ngClass]="{ 'filled': selectedRating >= 4 }"><i class="fas fa-star"></i></span>
+        <span (click)="selectRating(5)" [ngClass]="{ 'filled': selectedRating >= 5 }"><i class="fas fa-star"></i></span>
+      </div>
+    
+      <button (click)="submitRating()" class="btn btn-secondary">Submit Rating</button>
+    </div>
+  </div>
+</div>
+<div class="alert-container">
+<div *ngIf="showSuccessAlert1">
+  <app-animated-alert type="success" message="Product added to cart!!!!!"></app-animated-alert>
+</div>
+
+<div *ngIf="showFailureAlert1">
+  <app-animated-alert type="failure" message="Error!!!!"></app-animated-alert>
+</div>
+
+<div *ngIf="showSuccessAlert2">
+  <app-animated-alert type="success" message="Product rated successfully!!!!"></app-animated-alert>
+</div>
+
+<div *ngIf="showFailureAlert2">
+  <app-animated-alert type="failure" message="Error!!!!"></app-animated-alert>
+</div>
+</div>

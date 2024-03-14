@@ -1,0 +1,42 @@
+<app-admin-navbar></app-admin-navbar>
+
+<table class="product-table">
+  <thead>
+    <tr>
+      <th>Product Name</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th>Available Quantity</th>
+      <th>Image</th>
+      <th>Price</th>
+      <th>Discount</th>
+      <th>Specification</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{ product.productName }}</td>
+      <td>{{ product.description }}</td>
+      <td>{{ product.category }}</td>
+      <td>{{ product.availableQuantity }}</td>
+      <td>
+        <img src={{product.image}} alt="Product Image" height="150" width="150">
+      </td>
+      <td>{{ product.price }}</td>
+      <td>{{ product.discount }}</td>
+      <td>{{ product.specification }}</td>
+      <td>
+        <button class="edit-button" (click)="editProduct(product.id)">Edit</button>
+        <button class="delete-button" (click)="deleteProduct(product.id)">Delete</button>
+        
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert-container">
+  <div *ngIf="showSuccessAlert1">
+    <app-animated-alert type="success" message="Product deleted successfully, refresh the page!!!!!"></app-animated-alert>
+  </div>
+</div>

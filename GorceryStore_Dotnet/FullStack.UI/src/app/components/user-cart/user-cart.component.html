@@ -1,0 +1,28 @@
+<app-usernavbar></app-usernavbar>
+<div class="cart-items">
+  <div *ngFor="let item of cartItems" class="cart-item">
+    <h3>{{ item.productName }}</h3>
+    <img [src]="item.image" alt="Product Image">
+    <p>
+      <span class="original-price">Original Price: <del>{{ item.price * item.totalQuantity }}</del></span>
+      <span class="discounted-price">Discounted Price: {{ (item.price - item.discount) * item.totalQuantity }}</span>
+    </p>
+    <p>Description: {{ item.Description }}</p>
+    <p>Total Quantity: {{ item.totalQuantity }}</p>
+  </div>
+
+  <div class="total-amount">
+    Total Amount to Pay: {{ calculateTotalPriceToPay() }}
+  </div>
+
+  <button class="order-button" (click)="placeOrder()">Order Now</button>
+
+</div>
+<div *ngIf="showSuccessAlert">
+  <app-animated-alert type="success" message="Order Placed!!!"></app-animated-alert>
+</div>
+
+<div *ngIf="showFailureAlert">
+  <app-animated-alert type="failure" message="Order not Placed!!!"></app-animated-alert>
+</div>
+
